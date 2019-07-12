@@ -1,15 +1,43 @@
-//
-//  main.cpp
-//  e3.13
-//
-//  Created by Sergio campos on 7/11/19.
-//  Copyright © 2019 Sergio campos. All rights reserved.
-//
 
 #include <iostream>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+using namespace std;
+
+int main()
+{
+    cout << "enter first time in military format: ";
+    int first, second;
+    cin >> first;
+    cout << "enter second time in military format: ";
+    cin >> second;
+    
+    int hour1 = first / 100;
+    int hour2 = second / 100;
+    int minute1 = first % 100;
+    int minute2 = second % 100;
+    
+    if (hour1 < hour2)
+    {
+        cout << "first time comes first";
+    }
+    else if (hour1 == hour2)
+    {
+        if (minute1 < minute2)
+        {
+            cout << "first time comes first";
+        }
+        else if (minute1 > minute2)
+        {
+            cout << "second time comes first";
+        }
+        else
+        {
+            cout << "times are equal";
+        }
+    }
+    else
+    {
+        cout << "second time comes first";
+    }
+    cout << endl;
 }
